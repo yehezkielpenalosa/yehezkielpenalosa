@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Body</title><script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene fog="type: linear; color: antiquewhite; near: 3; far: 200;">
+            <!-- ^^^ ini parameter efek fog di scene 3dnya -->
+            <a-assets>
+                
+                <!--Load Gltf-->
+                <a-asset-item id="duaPelorMainMesh" src='assets/duaPelorMainMesh.gltf'></a-asset-item>
+                <a-asset-item id="duaPelor_decorMesh" src='assets/duaPelor_decorMesh.gltf'></a-asset-item>
+                <!--Load Image-->
+                <img id="duaPelorGrImg" src="assets/duaPelorGroundImage.png">
+            
+            </a-assets>
+
+            <a-sky color='antiquewhite'></a-sky>
+
+            <!--___________ model gltf append disini ___________-->
+            
+            <a-gltf-model
+                      src='#duaPelorMainMesh'
+                 position='0 -2 0'
+                 animation='property: rotation;
+                                  to: 0 360 0;
+                                loop: true;
+                                 dur: 200000;
+                              easing: linear;'
+            ></a-gltf-model>
+            <a-gltf-model
+                       src='#duaPelor_decorMesh'
+                  position='0 -10 0'
+                  scale='1 1 1'
+            ></a-gltf-model>
+            <!--___________ ######################## ___________-->
+
+
+
+            <!--___________ camera and cursor setup ___________-->
+            <a-camera
+                wasd-controls-enabled='true'
+                                 zoom='0.8'>
+                <a-cursor></a-cursor>
+              </a-camera>
+        </a-scene>
+    </body>
+</html>

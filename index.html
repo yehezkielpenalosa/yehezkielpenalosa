@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                box-sizing: border-box;
+                padding: 0;
+                margin: 0;
+                cursor: default;
+            }
+            .mainPageCon{
+                position: absolute;
+                width: 100vw;
+                height: 100vh;
+                overflow-y: hidden;
+                overflow-x: scroll;
+                scrollbar-width: none; /* this line ---> REMOVE SCROLLBAR FIREFOX*/
+            }
+            ::-webkit-scrollbar {
+                 display:none; /* this line ---> REMOVE SCROLLBAR WEBKIT (CHROME SAFARI EDGE)*/
+            }
+            .mainPageWrap{
+                display: inline-flex;
+                height: 100vh;
+                background-color: gray;
+                position: absolute;
+                scroll-snap-type: y mandatory;
+            }
+            .section01Arrow{
+                position: relative;
+                width: 500px;
+                height: 100px;
+                margin: 50px 0px 0px 80px;
+                display: flex;
+            }
+            .section01Arrow img{
+                width: 60%;
+            }
+            .section01Arrow a{
+                font: normal 500 20px/24px serif;
+                padding-top: 7.5%;
+                padding-left: 5%;
+                color: red;
+            }
+            /*-------------------------------------
+            IMAGES
+            -------------------------------------*/
+            #spSoulBgImg{
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                background-image: url(assets/posterThumb/soulThumb.jpg);
+                background-position: center;
+                background-size: cover;
+                margin-bottom: -100vh;
+                z-index: 1;
+                opacity: 0;
+                filter: brightness(50%) saturate(70%) contrast(60%);
+            }
+            #spSpiritBgImg{
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                background-image: url(assets/posterThumb/spiritThumb.jpg);
+                background-position: center;
+                background-size: cover;
+                margin-bottom: -100vh;
+                z-index: 1;
+                opacity: 0;
+                filter: brightness(50%) saturate(70%) contrast(60%);
+            }
+            #spBodyBgImg{
+                position: relative;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                background-image: url(assets/posterThumb/bodyThumb.jpg);
+                background-position: center;
+                background-size: cover;
+                margin-bottom: -100vh;
+                z-index: 1;
+                opacity: 0;
+                filter: brightness(50%) saturate(70%) contrast(60%);
+            }
+
+            /*-------------------------------------
+            SECTIONS SIZING
+            -------------------------------------*/
+            .blocks{
+                display: inline-table;
+                width: 490px; /* this (width) ---> ONLY AFFECTS POSTER SECTIONS (4,5,6)*/
+                height: 100vh;
+                position: relative;
+                top: 0;
+                left: 0;
+                margin: 0px 2px;
+                background-color: white;
+            }
+            /*FOR SECTIONS #1 to 3*/
+            .mainPageWrap > :nth-child(1){width: 80vw;    margin-left: 0px;}
+            .mainPageWrap > :nth-child(2){width: 40vw;}
+            .mainPageWrap > :nth-child(3){width: 55vw;}
+            .mainPageWrap > :nth-child(7){width: 150px;}
+
+
+            /*-------------------------------------
+            SECTIONS TEXT FORMATTING
+            -------------------------------------*/
+            .blocks h1{
+                margin: calc(50vh - 230px) 0px 0px 70px;
+                font-size: 72px;
+                color: red;
+            }
+            .blocks h2{
+                margin: 30px 75px;
+                width: 55%;
+                height: auto;
+                color: red;
+                font: normal 700 32px/50px serif;
+            }
+            #section02 p{ /*Paragraphs @ Section #2*/
+                color: red;
+                width: 80%;
+                height: auto;
+                margin: calc(50vh - 285px) 0px 0px 60px;
+                font: normal 400 16px/28px sans-serif;
+                letter-spacing: 3px;
+            }
+            #section02 > :nth-child(2){ /* Second Paragraph @ Section #2*/
+                margin-top: 180px;
+            }
+            #section03 div{
+                font: normal 500 100px/130px sans-serif;
+                color: red;
+                width: 80%;
+                margin: calc(50vh - 325px) 0px 0px 60px;
+            }
+            #sectionPosterBody{
+                color: red;
+                }
+            #sectionPosterSoul{
+                color: red;
+                }
+            #sectionPosterSpirit{
+                color: red;
+            }
+            h3{ /*FOR POSTER SECTION TITLE*/
+            position: relative;
+                font: normal 600 70px/80px serif;
+                letter-spacing: 8px;
+                margin: calc(50vh - 320px) 0px 0px 60px;
+                z-index: 2;
+            }
+            .posterSectionNum{
+                position: relative;
+                font: normal 500 200px/240px serif;
+                margin: 30px 0px 0px 60px;
+                z-index: 2;
+            }
+            .posterSectionDesc{
+                position: relative;
+                font: normal 500 14px/24px sans-serif;
+                letter-spacing: 2px;
+                margin: 100px 0px 0px 60px;
+                width: 80%;
+                z-index: 2;
+            }
+            /*ANIMATION & TRANSITIONS*/
+        </style>
+    </head>
+    <body>
+       <div class="mainPageCon">
+           <div class="mainPageWrap">
+               <div class="blocks" id="section01">
+                   <h1>THE TRICHOTOMY POSTERS</h1>
+                   <h2>
+                        The Trichotomy Poster is a series of posters
+                        divided into three main parts, namely The Body,
+                        The Soul, and The Spirit. Each of these posters
+                        is a form of visualization of the 5 chapters of
+                        the bonsai novel on the theme of discrimination.
+                        <!-----------------------------------------------------------------
+
+                        # EXTRA TEXTS #
+
+                        The Body represents the physical suffering experienced
+                        by the Chinese Benteng, The Soul represents the
+                        suffering of the soul, emotion, or mind, while
+                        The Spirit represents the fighting spirit,
+                        the principle of life held by the Chinese in
+                        dealing with physical and emotional suffering,
+                        or mind. The Trichotomy Poster is manifested in
+                        the form of a typographic poster installation
+                        through a VR approach.
+                        ------------------------------------------------------------------->
+                        
+                    </h2>
+                    <div class="section01Arrow">
+                        <img src="assets/landingPageSlideArrow.svg" alt="Scroll right for more">
+                        <a>Scroll for More</a>
+                    </div>
+               </div>
+               <div class="blocks" id="section02">
+                   <p>Hello, welcome to the world of visualization created
+                       by typography enthusiast, Yehezkiel Penalosa. This world
+                       will present an exploration of typography in VR, that comes
+                       from the visualization of a novel.
+                    </p>
+                    <p>
+                        Novel Bonsai by Pralampita Lembahmata, tells the acts of
+                        discrimination experienced by the Chinese Benteng, including:
+                        the tragedy of the Dutch invasion, Japanese occupation, and
+                        even the gloomy story of May 1998. More specifically,
+                        this novel also tells of the suffering or prejudice
+                        experienced by the Chinese Benteng descendants of four
+                        generations, namely Boenarman, Boenadi, Meily, and Feily.
+                    </p>
+               </div>
+               <div class="blocks" id="section03">
+                   <div>
+                       USE<br>
+                       DESKTOP<br>
+                       PREVIEW<br>
+                       FOR BETTER<br>
+                       EXPERIENCE<br>
+                   </div>
+               </div>
+
+                <div class="blocks" id="sectionPosterBody">
+                    <div id="spBodyBgImg"></div>
+                    <h3>THE<br>BODY</h3>
+                    <div class="posterSectionNum">1</div>
+                    <div class="posterSectionDesc">
+                       THE BODY PRESENTS A FRAGMENTED AND DISCRETE
+                       VISUAL CONFIGURATION. THE BODY ADAPTED CHAPTERS
+                       25, 28, AND 29 OF THE BONSAI NOVEL.
+                    </div>
+                </div>
+               
+                <div class="blocks" id="sectionPosterSoul">
+                    <div id="spSoulBgImg"></div>
+                    <h3>THE<br>SOUL</h3>
+                    <div class="posterSectionNum">2</div>
+                    <div class="posterSectionDesc">
+                        THE SOUL IS A VISUALIZATION OF THE
+                        GLOOMY STORY OF MAY 1998.THE SOUL ADAPTED
+                        CHAPTERS 60 AND 61 OF THE BONSAI NOVEL.
+                    </div>
+                </div>
+
+                <div class="blocks" id="sectionPosterSpirit">
+                    <div id="spSpiritBgImg"></div>
+                    <h3>THE<br>SPIRIT</h3>
+                    <div class="posterSectionNum">3</div>
+                    <div class="posterSectionDesc">
+                        THE SPIRIT IS A SERIES OF WORLDS
+                        OF THOUGHT FROM THE BOENARMAN FAMILY.
+                        ZEAL FOR LIFE AND THE THINGS THEY HOLD FIRMLY.
+                    </div>
+               </div>
+               <div class="blocks" id="sectionAbout">
+               </div>
+           </div>
+       </div>
+       
+       <script>
+           const secBody   = document.getElementById('sectionPosterBody');
+           const secSoul   = document.getElementById('sectionPosterSoul');
+           const secSpirit = document.getElementById('sectionPosterSpirit');
+           const soulImg   = document.getElementById('spSoulBgImg');
+           const spiritImg = document.getElementById('spSpiritBgImg');
+           const bodyImg   = document.getElementById('spBodyBgImg');
+
+           bgImgShowSoul = () => {
+                secSoul.style.backgroundColor    = 'gray';
+                secSoul.style.backgroundSize     = 'cover';
+                secSoul.style.backgroundPosition = 'center';
+                secSoul.style.transition         = 'all 0.3s ease-in-out';
+                secSoul.style.color              = 'white';
+                soulImg.style.opacity            = '1';
+                soulImg.style.transition         = 'all 0.3s ease-in-out';
+           }
+
+           bgImgHideSoul = () => {
+                secSoul.style.backgroundColor = 'white';
+                secSoul.style.color           = 'red';
+                soulImg.style.opacity         = '0';
+           }
+
+           bgImgShowSpirit = () => {
+                secSpirit.style.backgroundColor    = 'gray';
+                secSpirit.style.backgroundSize     = 'cover';
+                secSpirit.style.backgroundPosition = 'center';
+                secSpirit.style.transition         = 'all 0.3s ease-in-out';
+                secSpirit.style.color              = 'white';
+                spiritImg.style.opacity            = '1';
+                spiritImg.style.transition         = 'all 0.3s ease-in-out';
+           }
+
+           bgImgHideSpirit = () => {
+                secSpirit.style.backgroundColor = 'white';
+                secSpirit.style.color           = 'red';
+                spiritImg.style.opacity         = '0';
+           }
+
+           bgImgShowBody = () => {
+                secBody.style.backgroundColor    = 'gray';
+                secBody.style.backgroundSize     = 'cover';
+                secBody.style.backgroundPosition = 'center';
+                secBody.style.transition         = 'all 0.3s ease-in-out';
+                secBody.style.color              = 'white';
+                bodyImg.style.opacity            = '1';
+                bodyImg.style.transition         = 'all 0.3s ease-in-out';
+           }
+
+           bgImgHideBody = () => {
+                secBody.style.backgroundColor = 'white';
+                secBody.style.color           = 'red';
+                bodyImg.style.opacity         = '0';
+           }
+
+           secSoul.addEventListener('mouseover',bgImgShowSoul);
+           secSoul.addEventListener('mouseleave',bgImgHideSoul);
+           secSpirit.addEventListener('mouseover',bgImgShowSpirit);
+           secSpirit.addEventListener('mouseleave',bgImgHideSpirit);
+           secBody.addEventListener('mouseover',bgImgShowBody);
+           secBody.addEventListener('mouseleave',bgImgHideBody);
+       </script>
+    </body>
+</html>

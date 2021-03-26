@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Spirit</title><script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene fog="type: linear; color: #fff200; near: 1; far: 40;">
+            <!-- ^^^ ini parameter efek fog di scene 3dnya -->
+            <a-assets>
+                
+                <!--Load Gltf-->
+                <a-asset-item id="laksanaBonsaiGltf" src="assets/hidupLaksanaBonsai.gltf"></a-asset-item>
+                <!--Load Image-->
+            
+            </a-assets>
+
+            <a-sky color='#fff200'></a-sky>
+
+            <!--___________ model gltf append disini ___________-->
+            
+            <a-gltf-model
+                       src='#laksanaBonsaiGltf'
+                  position='0 -4 0'
+                 animation='property: rotation;
+                                  to: 0 360 0;
+                                loop: true;
+                                 dur: 200000;
+                              easing: linear;'
+            ></a-gltf-model>
+            <a-camera>
+                <a-cursor></a-cursor>
+              </a-camera>
+        </a-scene>
+    </body>
+</html>

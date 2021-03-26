@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Soul</title><script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene fog="type: linear; color: coral; near: 2; far: 90;">
+            <!-- ^^^ ini parameter efek fog di scene 3dnya -->
+            <a-assets>
+                
+                <!--Load Gltf-->
+                <a-asset-item id="buildSoul" src="assets/theSoulBuild04.glb"></a-asset-item>
+                <!-- ganti ke build03 lebih lightweight, build 04 belum optimized-->
+                <!--Load Image-->
+            
+            </a-assets>
+
+            <a-sky color='#fff200'></a-sky>
+
+            <!--___________ model gltf append disini ___________-->
+            
+            <a-gltf-model
+                       src='#buildSoul'
+                  position='0 0 0'
+            ></a-gltf-model>
+            <a-camera>
+                <a-cursor></a-cursor>
+              </a-camera>
+        </a-scene>
+    </body>
+</html>
